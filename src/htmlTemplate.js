@@ -1,9 +1,9 @@
-//function that creates variables containing html markup templates for each role type
-const profileTemplates = employees => {
- 
-    //maps manager data into the associated template literal
+//html templates using employees data to fill in using template literals
+function profileTemplates (employees) {
+
+    //builds html if manager map has data in employees
     const manager = employees.manager.map(function(employees) {
-        let managerCards = `
+        return managerCards = `
         <div class="card border col-sm m-4 p-0" style="min-width: 18rem; max-width:max-content;">
             <div class="bg-primary justify p-2 text-light">
                 <h2>${employees.name}</h2>
@@ -22,12 +22,10 @@ const profileTemplates = employees => {
             </div>
         </div>
         `
-        return managerCards
     });
-
-    //Html template for engineer filled with data mapped from the employees object
+    //builds html if engineer map has data in employees
     const engineer = employees.engineer.map(function(employees) {
-        let engineerCards = `
+        return engineerCards = `
         <div class="card border col-sm m-4 p-0" style="min-width: 18rem; max-width:max-content;">
             <div class="bg-primary justify p-2 text-light">
                 <h2>${employees.name}</h2>
@@ -45,12 +43,10 @@ const profileTemplates = employees => {
             </div>
         </div>
         `
-        return engineerCards
     })
-
-    //Html template for interns filled with data mapped from the employees object
+    //builds html if intern map has data in employees
     const intern = employees.intern.map(function(employees) {
-        let internCards = `
+        return internCards = `
         <div class="card border col-sm m-4 p-0" style="min-width: 18rem; max-width:max-content;">
             <div class="bg-primary justify p-2 text-light">
                 <h2>${employees.name}</h2>
@@ -67,12 +63,10 @@ const profileTemplates = employees => {
                 <p class="border-0 mb-0"> University: ${employees.school}</p>
             </div>
         </div>`
-        return internCards
     })
-    //Returns output of profile functions
+    //runs each function to make every employee type
     return manager + engineer + intern;
 }
-
 //The export returns a string with a template literal to push the team profiles
 module.exports = employees => {
     return `
@@ -81,7 +75,6 @@ module.exports = employees => {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- Bootstrap CSS version 5.0.2 -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
             <title>Team Profiles</title>
         </head>

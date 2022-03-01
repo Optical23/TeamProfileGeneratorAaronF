@@ -5,7 +5,7 @@ const baseQuestions = [{
     message: `What is the Employee's name?`
 },
 {
-    type: 'text',
+    type: 'input',
     name: 'id',
     message: `What is the Employee's ID number?`
 },
@@ -16,7 +16,7 @@ const baseQuestions = [{
 }];
 
 const managerQuestions = [{
-    type: 'text',
+    type: 'number',
     name: 'officeNumber',
     message: "What is the Manager's office number?"
 }];
