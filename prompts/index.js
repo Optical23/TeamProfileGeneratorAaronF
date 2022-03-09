@@ -1,13 +1,13 @@
-
+//All the questions that will be asked in inquirer
 const baseQuestions = [{
     type: 'text',
     name: 'employeeName',
     message: `What is the Employee's name?`
 },
 {
-    type: 'input',
+    type: 'number',
     name: 'id',
-    message: `What is the Employee's ID number?`
+    message: `What is the Employee's ID number?`,
 },
 {
     type: 'text',
